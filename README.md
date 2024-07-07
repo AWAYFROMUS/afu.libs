@@ -3,7 +3,7 @@ Client
 ```lua
 AFULibs = exports['afu.libs']:Initial()
 
-resultOfPlus = AFULibs.AwaitTriggerServerEvent("eventName", 1, 2)
+resultOfPlus = AFULibs.AwaitTriggerServerEvent("EventPlusNumber", 1, 2)
 print(resultOfPlus) -- 3
 ```
 Server
