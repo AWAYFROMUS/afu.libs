@@ -1,4 +1,4 @@
-#### Synchronize
+### Synchronize
 Client
 ```lua
 AFULibs = exports['afu.libs']:Initial()
