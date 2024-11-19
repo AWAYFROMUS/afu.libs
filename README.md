@@ -18,7 +18,7 @@ end)
 ### Replicate Data (WIP)
 1. Example Create ReplicateData
 ```lua
----@server-side-supported
+---@server-side-supported~
 ---@client-side-supported
 
 AFULibs = exports['afu.libs']:Initial()
