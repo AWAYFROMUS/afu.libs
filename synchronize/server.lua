@@ -15,7 +15,7 @@ local asyncEvents = {}
 ---@param cb function ฟังก์ชันที่จะทำงานเมื่อถูกเรียกจาก Client
 function Libs.RegisterAsyncServerEvent(eventName, cb)
     asyncEvents[eventName] = cb
-    Modules.Logger.debug(("Registered Async Server Event ^5%s^7"):format(eventName))
+    Libs.Logger.debug(("registered async server event ^5%s^7"):format(eventName))
 end
 
 ---@param pass boolean
@@ -33,7 +33,7 @@ RegisterNetEvent("__afulibs_await_tse", function(eventName, id, ...)
     local source = source
     local pass, firstResult, data = callbackResponse(pcall(asyncEvents[eventName], source, ...))
     if not pass then
-        Modules.Logger.error(("Async Server Event ^1%s^7 failed with error: ^1%s^7"):format(eventName, result))
+        Libs.Logger.error(("async server event ^1%s^7 failed with error: ^1%s^7"):format(eventName, firstResult))
         return TriggerClientEvent("__afulibs_res_tse", source, id)
     end
     TriggerClientEvent("__afulibs_res_tse", source, id, firstResult, table.unpack(data))

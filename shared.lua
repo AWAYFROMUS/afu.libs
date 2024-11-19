@@ -8,5 +8,9 @@
 ]]
 
 exports("Initial", function(key)
+    ---@comment wait for replicate data to be initialized
+    if Libs.ReplicateData.isInitialized then
+        Citizen.Await(Libs.ReplicateData.isInitialized)
+    end
     return key and Libs[key] or Libs
 end)
